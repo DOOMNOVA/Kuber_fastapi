@@ -1,1 +1,1 @@
-## Simple FastAPI endpoint using Kubernetes and Docker. (in progress)
+## Simple FastAPI endpoint using Kubernetes and Docker. (v2 in progess for LLM app)
