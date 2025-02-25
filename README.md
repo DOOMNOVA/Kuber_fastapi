@@ -1,1 +1,1 @@
-## Simple FastAPI endpoint using Kubernetics and Docker. (in progress)
+## Simple FastAPI endpoint using Kubernetes and Docker. (in progress)
