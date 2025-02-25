@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuber-fasptai
+  labels:
+    app: kuber-fasptai
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kuber-fasptai
+  template:
+    metadata:
+      labels:
+        app: kuber-fasptai
+    spec:
+      containers:
+      - name: kuber-fasptai
+        image: kuber-fasptai:v1.0.0
+        imagePullPolicy: Never # use the local image
+        ports:
+        - containerPort: 5000
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
